@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "web": "vite --config vite.web.config.ts",
+    "build:web": "vite build --config vite.web.config.ts",
     "build": "vite build && electron-builder",
     "preview": "vite preview",
     "test": "vitest",
@@ -85,4 +86,5 @@
     },
     "forceCodeSigning": false
   }
+
 }

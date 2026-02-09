@@ -1,0 +1,525 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+  /* LIGHT: Premium Corporate */
+  --bg-primary: #f8fafc;
+  /* Slate 50 - Main App Background (Software Gray) */
+  --bg-secondary: #f1f5f9;
+  /* Slate 100 - Sidebar/Sections */
+  --bg-secondary-rgb: 241, 245, 249;
+  --bg-card: #ffffff;
+  /* Pure White - Surfaces */
+  --bg-card-rgb: 255, 255, 255;
+
+  --text-primary: #0f172a;
+  /* Slate 950 */
+  --text-secondary: #64748b;
+  /* Slate 500 - Softer secondary text */
+  --border-color: #e2e8f0;
+  /* Slate 200 - Crisp borders */
+
+  /* Default Emerald */
+  --accent-primary: #10b981;
+  --accent-secondary: #059669;
+  --accent-soft: #ecfdf5;
+
+  --bg-input: #ffffff;
+  --radius-ui: 1rem;
+  --table-padding: 1rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.04);
+
+  /* Typography Tokens */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Animation Speed Tokens */
+  --anim-speed: 0.3s;
+  --anim-curve: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  /* DARK: Modern Deep */
+  --bg-primary: #020617;
+  /* Slate 950 - Deepest Base */
+  --bg-secondary: #0f172a;
+  /* Slate 900 - Sidebar/Headers */
+  --bg-secondary-rgb: 15, 23, 42;
+  --bg-card: #1e293b;
+  /* Slate 800 - Cards pop against 950 */
+  --bg-card-rgb: 30, 41, 59;
+
+  --text-primary: #f8fafc;
+  /* Slate 50 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+  --border-color: #334155;
+  /* Slate 700 - Visible borders */
+
+  /* Default Emerald Dark */
+  --accent-primary: #34d399;
+  --accent-secondary: #10b981;
+  --accent-soft: rgba(52, 211, 153, 0.1);
+
+  --bg-input: #0f172a;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+/* Dark Mode Variants */
+[data-theme='dark'][data-dark-variant='oled'] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-secondary-rgb: 10, 10, 10;
+  --bg-card: #111111;
+  --bg-card-rgb: 17, 17, 17;
+}
+
+/* Color Themes */
+.theme-emerald {
+  --accent-primary: #10b981;
+  --accent-secondary: #059669;
+  --accent-soft: #ecfdf5;
+}
+
+.theme-ocean {
+  --accent-primary: #0ea5e9;
+  --accent-secondary: #0284c7;
+  --accent-soft: #f0f9ff;
+}
+
+.theme-berry {
+  --accent-primary: #f43f5e;
+  --accent-secondary: #e11d48;
+  --accent-soft: #fff1f2;
+}
+
+.theme-space {
+  --accent-primary: #6366f1;
+  --accent-secondary: #4f46e5;
+  --accent-soft: #eef2ff;
+}
+
+.theme-gold {
+  --accent-primary: #f59e0b;
+  --accent-secondary: #d97706;
+  --accent-soft: #fffbeb;
+}
+
+.theme-sunset {
+  --accent-primary: #f97316;
+  --accent-secondary: #ea580c;
+  --accent-soft: #fff7ed;
+}
+
+.theme-forest {
+  --accent-primary: #16a34a;
+  --accent-secondary: #15803d;
+  --accent-soft: #f0fdf4;
+}
+
+.theme-midnight {
+  --accent-primary: #7c3aed;
+  --accent-secondary: #6d28d9;
+  --accent-soft: #f5f3ff;
+}
+
+.theme-royal {
+  --accent-primary: #2563eb;
+  --accent-secondary: #1d4ed8;
+  --accent-soft: #eff6ff;
+}
+
+.theme-rose {
+  --accent-primary: #f472b6;
+  --accent-secondary: #db2777;
+  --accent-soft: #fdf2f8;
+}
+
+.theme-teal {
+  --accent-primary: #14b8a6;
+  --accent-secondary: #0d9488;
+  --accent-soft: #f0fdfa;
+}
+
+.theme-indigo {
+  --accent-primary: #6366f1;
+  --accent-secondary: #4f46e5;
+  --accent-soft: #eef2ff;
+}
+
+.theme-amber {
+  --accent-primary: #f59e0b;
+  --accent-secondary: #d97706;
+  --accent-soft: #fffbeb;
+}
+
+.theme-slate {
+  --accent-primary: #64748b;
+  --accent-secondary: #475569;
+  --accent-soft: #f8fafc;
+}
+
+.theme-crimson {
+  --accent-primary: #dc2626;
+  --accent-secondary: #991b1b;
+  --accent-soft: #fef2f2;
+}
+
+.theme-mint {
+  --accent-primary: #4ade80;
+  --accent-secondary: #16a34a;
+  --accent-soft: #f0fdf4;
+}
+
+.theme-nordic {
+  --accent-primary: #60a5fa;
+  --accent-secondary: #2563eb;
+  --accent-soft: #eff6ff;
+}
+
+.theme-cyber {
+  --accent-primary: #00ff41;
+  --accent-secondary: #008f11;
+  --accent-soft: rgba(0, 255, 65, 0.1);
+}
+
+.theme-mocha {
+  --accent-primary: #78350f;
+  --accent-secondary: #451a03;
+  --accent-soft: #fffbeb;
+}
+
+/* Dark adjustments for themes */
+[data-theme='dark'].theme-emerald {
+  --accent-primary: #34d399;
+  --accent-secondary: #10b981;
+  --accent-soft: rgba(52, 211, 153, 0.1);
+}
+
+[data-theme='dark'].theme-ocean {
+  --accent-primary: #38bdf8;
+  --accent-secondary: #0ea5e9;
+  --accent-soft: rgba(56, 189, 248, 0.1);
+}
+
+[data-theme='dark'].theme-berry {
+  --accent-primary: #fb7185;
+  --accent-secondary: #f43f5e;
+  --accent-soft: rgba(251, 113, 133, 0.1);
+}
+
+[data-theme='dark'].theme-space {
+  --accent-primary: #818cf8;
+  --accent-secondary: #6366f1;
+  --accent-soft: rgba(129, 140, 248, 0.1);
+}
+
+[data-theme='dark'].theme-gold {
+  --accent-primary: #fbbf24;
+  --accent-secondary: #f59e0b;
+  --accent-soft: rgba(251, 191, 36, 0.1);
+}
+
+[data-theme='dark'].theme-sunset {
+  --accent-primary: #fb923c;
+  --accent-secondary: #f97316;
+  --accent-soft: rgba(251, 146, 60, 0.1);
+}
+
+[data-theme='dark'].theme-forest {
+  --accent-primary: #4ade80;
+  --accent-secondary: #22c55e;
+  --accent-soft: rgba(74, 222, 128, 0.1);
+}
+
+[data-theme='dark'].theme-midnight {
+  --accent-primary: #a78bfa;
+  --accent-secondary: #8b5cf6;
+  --accent-soft: rgba(167, 139, 250, 0.1);
+}
+
+[data-theme='dark'].theme-royal {
+  --accent-primary: #60a5fa;
+  --accent-secondary: #3b82f6;
+  --accent-soft: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme='dark'].theme-rose {
+  --accent-primary: #fb7185;
+  --accent-soft: rgba(251, 113, 133, 0.1);
+}
+
+[data-theme='dark'].theme-teal {
+  --accent-primary: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.1);
+}
+
+[data-theme='dark'].theme-indigo {
+  --accent-primary: #818cf8;
+  --accent-secondary: #6366f1;
+  --accent-soft: rgba(129, 140, 248, 0.1);
+}
+
+[data-theme='dark'].theme-amber {
+  --accent-primary: #fbbf24;
+  --accent-secondary: #f59e0b;
+  --accent-soft: rgba(251, 191, 36, 0.1);
+}
+
+[data-theme='dark'].theme-slate {
+  --accent-primary: #94a3b8;
+  --accent-secondary: #64748b;
+  --accent-soft: rgba(148, 163, 184, 0.1);
+}
+
+[data-theme='dark'].theme-crimson {
+  --accent-primary: #f87171;
+  --accent-secondary: #ef4444;
+  --accent-soft: rgba(248, 113, 113, 0.1);
+}
+
+[data-theme='dark'].theme-mint {
+  --accent-primary: #4ade80;
+  --accent-secondary: #22c55e;
+  --accent-soft: rgba(74, 222, 128, 0.1);
+}
+
+[data-theme='dark'].theme-nordic {
+  --accent-primary: #60a5fa;
+  --accent-secondary: #2563eb;
+  --accent-soft: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme='dark'].theme-cyber {
+  --accent-primary: #00ff41;
+  --accent-soft: rgba(0, 255, 65, 0.2);
+}
+
+[data-theme='dark'].theme-mocha {
+  --accent-primary: #a16207;
+  --accent-secondary: #78350f;
+  --accent-soft: rgba(161, 98, 7, 0.1);
+}
+
+/* Typography Classes */
+.font-inter {
+  --font-main: 'Inter', sans-serif;
+}
+
+.font-roboto {
+  --font-main: 'Roboto', sans-serif;
+}
+
+.font-poppins {
+  --font-main: 'Poppins', sans-serif;
+}
+
+.font-montserrat {
+  --font-main: 'Montserrat', sans-serif;
+}
+
+/* Animation Speeds */
+.anim-none * {
+  transition: none !important;
+}
+
+.anim-slow {
+  --anim-speed: 0.6s;
+}
+
+.anim-normal {
+  --anim-speed: 0.3s;
+}
+
+.anim-fast {
+  --anim-speed: 0.15s;
+}
+
+/* Shadow Styles */
+.shadow-none {
+  --shadow-sm: none;
+  --shadow-md: none;
+}
+
+.shadow-industrial {
+  --shadow-sm: 0 0 0 1px var(--border-color);
+  --shadow-md: 0 0 0 2px var(--border-color);
+}
+
+.shadow-soft {
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Background Textures */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+.bg-mesh {
+  background: radial-gradient(at 0% 0%, var(--accent-primary) 0, transparent 50%), radial-gradient(at 50% 0%, var(--accent-secondary) 0, transparent 50%);
+  opacity: 0.05;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.glass-effect {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background-color: rgba(var(--bg-card-rgb), calc(var(--glass-opacity, 0.6))) !important;
+  border: 1px solid rgba(var(--bg-card-rgb), 0.1) !important;
+}
+
+.radius-none {
+  --radius-ui: 0px;
+}
+
+.radius-medium {
+  --radius-ui: 0.75rem;
+}
+
+.radius-large {
+  --radius-ui: 1.25rem;
+}
+
+.radius-full {
+  --radius-ui: 2rem;
+}
+
+/* Comprehensive Override for Tailwind Rounded classes */
+.rounded,
+.rounded-md {
+  border-radius: var(--radius-ui) !important;
+}
+
+.rounded-sm {
+  border-radius: calc(var(--radius-ui) * 0.5) !important;
+}
+
+.rounded-lg {
+  border-radius: var(--radius-ui) !important;
+}
+
+.rounded-xl {
+  border-radius: var(--radius-ui) !important;
+}
+
+.rounded-2xl {
+  border-radius: calc(var(--radius-ui) * 1.5) !important;
+}
+
+.rounded-3xl {
+  border-radius: calc(var(--radius-ui) * 2) !important;
+}
+
+.rounded-\[2rem\] {
+  border-radius: calc(var(--radius-ui) * 2) !important;
+}
+
+.rounded-\[2\.5rem\] {
+  border-radius: calc(var(--radius-ui) * 2.5) !important;
+}
+
+.density-compact {
+  --table-padding: 0.5rem;
+}
+
+.density-comfortable {
+  --table-padding: 1.25rem;
+}
+
+.card-premium {
+  border-radius: var(--radius-ui);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  box-shadow: var(--shadow-md);
+}
+
+input,
+select,
+textarea {
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  border-radius: calc(var(--radius-ui) / 1.5);
+}
+
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--bg-primary);
+  /* background-image removed for solid visibility */
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Ensure custom-scrollbar class works */
+.custom-scrollbar {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Force theme-aware background on autofill */
+/* Global Dynamic Density */
+th,
+td {
+  padding: var(--table-padding) !important;
+  transition: padding 0.3s ease;
+}

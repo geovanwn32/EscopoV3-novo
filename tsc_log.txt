@@ -1,0 +1,12 @@
+pages/Payroll.tsx(287,109): error TS2339: Property 'SALARIO_MINIMO' does not exist on type '{ 2024: { SALARIO_MINIMO: number; TETO_INSS: number; DEDUCAO_DEP_IRRF: number; DESC_SIMPLIFICADO_IRRF: number; SALARIO_FAMILIA_COTA: number; SALARIO_FAMILIA_LIMITE: number; INSS_FAIXAS: number[]; IRRF_FAIXAS: number[]; }; 2025: { ...; }; }'.
+tests/fiscal.test.ts(5,5): error TS2305: Module '"../utils/fiscalCalculations"' has no exported member 'shouldShiftAnnex'.
+tests/fiscal.test.ts(6,5): error TS2305: Module '"../utils/fiscalCalculations"' has no exported member 'calculateEffectiveRate'.
+tests/fiscal.test.ts(7,5): error TS2305: Module '"../utils/fiscalCalculations"' has no exported member 'calculateDasValue'.
+types.ts(251,5): error TS2300: Duplicate identifier 'proLaboreValue'.
+types.ts(256,5): error TS2300: Duplicate identifier 'proLaboreValue'.
+utils/legalGenerators.ts(54,235): error TS2339: Property 'phone' does not exist on type 'CompanyEntity'.
+utils/legalGenerators.ts(55,258): error TS2339: Property 'phone' does not exist on type 'CompanyEntity'.
+utils/legalGenerators.ts(114,25): error TS2339: Property 'accessKey' does not exist on type 'Invoice'.
+utils/payrollEngine.ts(184,29): error TS2339: Property 'SALARIO_MINIMO' does not exist on type '{ 2024: { SALARIO_MINIMO: number; TETO_INSS: number; DEDUCAO_DEP_IRRF: number; DESC_SIMPLIFICADO_IRRF: number; SALARIO_FAMILIA_COTA: number; SALARIO_FAMILIA_LIMITE: number; INSS_FAIXAS: number[]; IRRF_FAIXAS: number[]; }; 2025: { ...; }; }'.
+utils/payrollEngine.ts(204,33): error TS2339: Property 'SALARIO_FAMILIA_LIMITE' does not exist on type '{ 2024: { SALARIO_MINIMO: number; TETO_INSS: number; DEDUCAO_DEP_IRRF: number; DESC_SIMPLIFICADO_IRRF: number; SALARIO_FAMILIA_COTA: number; SALARIO_FAMILIA_LIMITE: number; INSS_FAIXAS: number[]; IRRF_FAIXAS: number[]; }; 2025: { ...; }; }'.
+utils/payrollEngine.ts(207,46): error TS2339: Property 'SALARIO_FAMILIA_COTA' does not exist on type '{ 2024: { SALARIO_MINIMO: number; TETO_INSS: number; DEDUCAO_DEP_IRRF: number; DESC_SIMPLIFICADO_IRRF: number; SALARIO_FAMILIA_COTA: number; SALARIO_FAMILIA_LIMITE: number; INSS_FAIXAS: number[]; IRRF_FAIXAS: number[]; }; 2025: { ...; }; }'.
